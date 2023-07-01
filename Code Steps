@@ -1,0 +1,102 @@
+Please follow the steps below:
+
+Step 1: Setting up the Next.js project
+
+Create a new Next.js project by running the following command:
+
+
+npx create-next-app nextjs-frontend
+Navigate to the project directory:
+
+
+cd nextjs-frontend
+Install Tailwind CSS and its dependencies:
+
+
+npm install tailwindcss postcss autoprefixer
+Create a Tailwind CSS configuration file:
+
+npx tailwindcss init -p
+Open the tailwind.config.js file and customize it as per your requirements.
+
+Create a new CSS file for your custom styles:
+
+Create a styles folder in the project root directory.
+Inside the styles folder, create a globals.css file.
+In globals.css, import Tailwind CSS styles:
+
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+Import the globals.css file in the _app.js file:
+
+Open pages/_app.js.
+Import the globals.css file:
+jsx
+Copy code
+import '../styles/globals.css';
+Step 2: Creating the UI components
+
+Create the necessary folders and files for your UI components:
+
+Create a components folder in the src directory.
+Inside the components folder, create the required component files (e.g., Sidebar.js, Header.js, Content.js).
+Implement the UI components in their respective files.
+
+Open components/Sidebar.js and create the Sidebar component.
+Open components/Header.js and create the Header component.
+Open components/Content.js and create the Content component.
+You can use React and Tailwind CSS classes to structure and style the components based on the provided UI designs.
+
+Step 3: Populating the content using dummy data
+
+Create a separate file (e.g., data.js) in the src folder to hold the dummy data.
+
+Inside data.js, define the required data in the format required by your components.
+
+Step 4: Rendering the components with dummy data
+
+Open the appropriate Next.js page file (e.g., pages/index.js).
+
+Import the necessary components and dummy data file.
+
+Inside the page component, render the UI components and pass the dummy data as props to populate the content.
+
+Code structure for reference:
+
+
+// components/Sidebar.js
+const Sidebar = () => {
+  // Sidebar component implementation
+};
+
+// components/Header.js
+const Header = () => {
+  // Header component implementation
+};
+
+// components/Content.js
+const Content = () => {
+  // Content component implementation
+};
+
+// pages/index.js
+import Sidebar from '../components/Sidebar';
+import Header from '../components/Header';
+import Content from '../components/Content';
+import dummyData from '../data';
+
+const Home = () => {
+  return (
+    <div>
+      <Sidebar />
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <Content data={dummyData} />
+      </div>
+    </div>
+  );
+};
+
+export default Home;
